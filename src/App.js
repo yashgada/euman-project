@@ -1,11 +1,10 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Screen1 from "./components/Screen1";
 import Screen3 from "./components/Screen3";
-import styled from "styled-components";
 import Screen2 from "./components/Screen2";
 import { useEffect, useState } from "react";
+import StyledSectionCenter from "./components/styled/StyledSectionCenter";
 
 const getLocalStorage = () => {
   let list = localStorage.getItem("taskList");
@@ -14,24 +13,6 @@ const getLocalStorage = () => {
 };
 
 function App() {
-  const Section = styled.section`
-    background-color: #fff;
-    margin: 8rem auto 0;
-    width: 90vw;
-    max-width: 35rem;
-    padding: 2rem;
-    box-shadow: var(--light-shadow);
-    a:not(:last-child) {
-      color: var(--clr-primary);
-      text-decoration: none;
-      display: flex;
-      justify-content: space-between;
-      margin-top: 1.5rem;
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      background-color: var(--clr-secondary);
-    }
-  `;
   const [taskList, setTaskList] = useState(getLocalStorage());
 
   const addTask = ({ desc, imp, urgent, id }) => {
@@ -46,7 +27,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Section>
+      <StyledSectionCenter>
         <Routes>
           <Route
             path="/"
@@ -94,7 +75,7 @@ function App() {
           />
           <Route path="create" element={<Screen2 addTask={addTask} />} />
         </Routes>
-      </Section>
+      </StyledSectionCenter>
     </BrowserRouter>
   );
 }

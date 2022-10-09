@@ -10,8 +10,6 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   color: var(--clr-primary);
   display: block;
-  /* margin-left: auto;
-  margin-right: auto; */
   text-align: center;
   background-color: var(--clr-secondary);
 `;

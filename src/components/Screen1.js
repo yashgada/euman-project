@@ -1,25 +1,10 @@
 import React from "react";
-import styled from "styled-components";
 import TaskCategoryButton from "./TaskCategoryButton";
 import { AiOutlinePlusCircle } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import StyledIcon from "./styled/StyledIcon";
+import StyledScreen1Frame from "./styled/StyledScreen1Frame";
 
 const Screen1 = ({ taskList }) => {
-  const StyledDiv = styled.div`
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-auto-flow: column;
-    align-items: center;
-  `;
-  const StyledLink = styled(Link)`
-    grid-row: 4;
-    font-size: 3rem;
-    background-color: transparent;
-    background: transparent;
-    padding-left: 2rem;
-    color: var(--clr-primary);
-  `;
   let countDoItNow = 0;
   let countDecideWhenToDo = 0;
   let countDelegateIt = 0;
@@ -34,7 +19,7 @@ const Screen1 = ({ taskList }) => {
     }
   });
   return (
-    <StyledDiv>
+    <StyledScreen1Frame>
       <TaskCategoryButton
         path="DoItNow"
         title="Do it now"
@@ -51,10 +36,10 @@ const Screen1 = ({ taskList }) => {
         count={countDelegateIt}
       />
       <TaskCategoryButton path="DumpIt" title="Dump it" count={countDumpIt} />
-      <StyledLink to="/create">
+      <StyledIcon to="/create">
         <AiOutlinePlusCircle />
-      </StyledLink>
-    </StyledDiv>
+      </StyledIcon>
+    </StyledScreen1Frame>
   );
 };
 
