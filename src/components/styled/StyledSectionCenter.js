@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const StyledSectionCenter = styled.section`
@@ -13,10 +12,15 @@ const StyledSectionCenter = styled.section`
     text-decoration: none;
     display: flex;
     justify-content: space-between;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     padding: 1rem;
     background-color: var(--clr-secondary);
+    @media screen and (min-width: 800px) {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+    }
   }
 `;
 export default StyledSectionCenter;
